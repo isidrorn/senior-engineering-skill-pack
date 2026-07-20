@@ -55,8 +55,9 @@ Ranked by how central they are to the target domains:
    reasoning (concurrency pitfalls, JVM performance, Spring transaction/bean boundaries) is a
    legitimate gap given the stated stack. Candidate for an original skill grounded in the user's own
    `Claude-senior-java-engineer` curriculum (which has the material but ships no skills).
-6. **Deeper SRE** — slo-architect (error-budget/burn-rate math), runbook-generator,
-   feature-flags-architect from alirezarezvani are strong SOLID skills held back only to cap v0.1.
+6. **Deeper SRE** — `slo-architect` and `feature-flags-architect` were **promoted into v0.1** (see
+   Doc 4). `runbook-generator` (doc generator) and `migration-architect` (script-heavy, overlaps
+   database-designer) remain reasonable later adds.
 
 ## 4. Opportunities for original skills
 
@@ -80,7 +81,8 @@ Where nothing existing is good enough and the user has a distinctive point of vi
 - **Pin upstream SHAs (done in ATTRIBUTION.md) and diff on update** so an upstream rewrite of a
   vendored skill is a conscious choice, not a silent drift.
 - **Run `claude plugin details` after each change** to watch always-on token cost as the pack grows
-  (v0.1 baseline: ~1,947 tokens). A senior pack that's too expensive to keep enabled defeats itself.
+  (v0.1 baseline: ~2,502 tokens for 29 skills). A senior pack that's too expensive to keep enabled
+  defeats itself.
 - **Complementary MCP servers, not skills.** The kubernetes/terraform/grafana MCP *servers* found
   during discovery pair well with the reasoning skills (e.g. observability-designer + mcp-grafana)
   but belong in a user's MCP config, not this pack.

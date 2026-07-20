@@ -1,6 +1,6 @@
 # Coverage Matrix — v0.1
 
-At-a-glance view of what the 25-skill pack covers and where the gaps are, so we can fill them
+At-a-glance view of what the 29-skill pack covers and where the gaps are, so we can fill them
 deliberately. **Strength:** 🟩 strong · 🟨 medium · 🟧 light · ⬜ none. "Best fill" names the
 strongest known skill/repo to close a gap (deferred picks are already-read; repos are for a later
 pass — see [research/05-personalization-roadmap.md](research/05-personalization-roadmap.md)).
@@ -11,7 +11,7 @@ pass — see [research/05-personalization-roadmap.md](research/05-personalizatio
 |---|---|---|---|
 | Design Before Code | 🟩 | writing-plans, brainstorming, zero-hallucination-coder, system-design | — |
 | Root Cause Analysis | 🟩 | systematic-debugging | — |
-| Code Review (all sides) | 🟩 | code-review, adversarial-reviewer, requesting-/receiving-code-review | +named-persona-adversarial-review (distinct lens) |
+| Code Review (all sides) | 🟩 | code-review, adversarial-reviewer, named-persona-adversarial-review, requesting-/receiving-code-review | — |
 | Architecture Review | 🟩 | architecture, senior-solution-architect, code-review | — |
 | Trade-off Analysis | 🟨 | tech-stack-evaluator, architecture | (script-leaning; fine) |
 | Failure Mode Analysis | 🟨 | chaos-engineering, incident-response | — |
@@ -26,12 +26,12 @@ pass — see [research/05-personalization-roadmap.md](research/05-personalizatio
 | Testing | 🟩 | testing-strategy, test-driven-development | — |
 | Debugging / RCA | 🟩 | systematic-debugging | — |
 | Production Engineering | 🟩 | deploy-checklist, incident-response, ship-gate, chaos-engineering | — |
-| **Reliability / SRE (SLO/error-budget)** | 🟧 | (only implied via observability-designer) | **slo-architect** ← clearest gap |
-| Progressive Delivery / Release | 🟧 | deploy-checklist, ship-gate | **feature-flags-architect** |
-| Observability | 🟨 | observability-designer | slo-architect (deep SLO math) |
+| Reliability / SRE (SLO/error-budget) | 🟩 | slo-architect, observability-designer | — |
+| Progressive Delivery / Release | 🟩 | feature-flags-architect, deploy-checklist, ship-gate | — |
+| Observability | 🟩 | observability-designer, slo-architect | — |
 | API Design | 🟨 | api-design-reviewer, system-design | (script-dependent linter) |
 | Data Modeling | 🟨 | database-designer | migration-architect |
-| AI Engineering / LLM | 🟨 | mcp-builder, rag-architect | agent-designer, llm-cost-optimizer |
+| AI Engineering / LLM | 🟨 | mcp-builder, rag-architect, agent-designer | llm-cost-optimizer, prompt-governance |
 | RAG | 🟨 | rag-architect | — |
 | Security | 🟧 | code-review (security lens only) | trailofbits/skills, agamm/owasp (repo) |
 | Cloud-Native / Kubernetes / IaC (design) | 🟧 | — (operational only) | zxkane/aws-skills, terraform-patterns (de-tooled) |
@@ -41,9 +41,10 @@ pass — see [research/05-personalization-roadmap.md](research/05-personalizatio
 
 ## Reading the gaps
 
-- **Quick wins (already-read, MIT, drop-in):** `slo-architect`, `feature-flags-architect`,
-  `named-persona-adversarial-review`, `agent-designer` — close the SRE/release/AI-eng thin spots
-  without new research.
-- **Next-pass (needs a repo eval):** dedicated Security lane, Cloud-native/K8s *design*.
+- ✅ **Done (v0.1):** the SRE/release/AI-eng quick wins — `slo-architect`,
+  `feature-flags-architect`, `named-persona-adversarial-review`, `agent-designer` — are now in the
+  pack (25 → 29).
+- **Next-pass (needs a repo eval):** dedicated Security lane (trailofbits/OWASP), Cloud-native/K8s
+  *design*.
 - **Original skills (nothing good enough exists):** Distributed-systems review, Event-driven
   architecture, Java/Spring reasoning.

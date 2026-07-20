@@ -28,12 +28,12 @@ winner(s) selected for the pack.
 |---|---|---|
 | **C1 design-before-code** | writing-plans, brainstorming (superpowers); spec-driven-workflow, zero-hallucination-coder (alirezarezvani); writing-plans/brainstorming (ericgandrade, derived) | Keep **brainstorming** + **writing-plans** (superpowers originals) for the plan-first workflow, and **zero-hallucination-coder** for grounded execution. `spec-driven-workflow` overlaps → **merge candidate**, not vendored (its Given/When/Then→TDD bridge is the one distinct idea; see roadmap). Drop ericgandrade duplicates. |
 | **C2 debugging / RCA** | systematic-debugging (superpowers); debug (Anthropic); focused-fix (alirezarezvani) | Keep **systematic-debugging** — the strongest behavior version. Drop Anthropic `debug` (same altitude, redundant once systematic-debugging is present) and `focused-fix`. |
-| **C3 code-review** | code-review (Anthropic); requesting/receiving-code-review (superpowers); adversarial-reviewer, named-persona-adversarial-review, pr-review-expert, code-reviewer (alirezarezvani) | These occupy **different roles**, not duplicates: keep **code-review** (do the review), **requesting-** + **receiving-code-review** (reviewee discipline), **adversarial-reviewer** (hostile-persona lens). Drop `named-persona-adversarial-review` (overlaps adversarial-reviewer), `pr-review-expert`, `code-reviewer` (generic). |
+| **C3 code-review** | code-review (Anthropic); requesting/receiving-code-review (superpowers); adversarial-reviewer, named-persona-adversarial-review, pr-review-expert, code-reviewer (alirezarezvani) | These occupy **different roles**, not duplicates: keep **code-review** (do the review), **requesting-** + **receiving-code-review** (reviewee discipline), **adversarial-reviewer** (abstract hostile personas), and **named-persona-adversarial-review** (sourced-philosophy lens — a distinct flavor, kept on second read). Drop `pr-review-expert`, `code-reviewer` (generic). |
 | **C4 architecture / ADR** | architecture (Anthropic); senior-solution-architect (ericgandrade); senior-architect (alirezarezvani) | Keep **architecture** (concise ADR discipline) + **senior-solution-architect** (C4/DDD/Hexagonal — distinct modeling depth). Drop **senior-architect** (alirezarezvani): largely a wrapper around a diagram-generator + dependency-analyzer script — tooling, and overlaps the other two. |
 | **C6 testing** | testing-strategy (Anthropic); test-driven-development (superpowers); tdd-guide, senior-qa, api-test-suite-builder (alirezarezvani) | Keep **testing-strategy** (strategy/altitude) + **test-driven-development** (the TDD discipline). Drop `tdd-guide` (dup of TDD) and the generators. |
 | **C7 production-readiness** | deploy-checklist (Anthropic); ship-gate (alirezarezvani); verification-before-completion (superpowers) | Complementary altitudes — keep all three: **verification-before-completion** (done-means-verified, per-task), **deploy-checklist** (release checklist), **ship-gate** (codebase pre-prod audit that intercepts deploy intent). |
 | **C8 incident** | incident-response (Anthropic); incident-commander, incident-response-security (alirezarezvani) | Keep **incident-response** (Anthropic, blameless postmortem). Drop the alirezarezvani variants (one is security-forensics-specific → roadmap security add-on). |
-| **C15 AI/LLM/MCP** | mcp-builder (Anthropic); mcp-server-builder (alirezarezvani); rag-architect, agent-designer, llm-cost-optimizer… | Keep **mcp-builder** (official, Apache-2.0 confirmed — better than the alirezarezvani `mcp-server-builder` duplicate) + **rag-architect** (RAG design + eval discipline). Others → roadmap. |
+| **C15 AI/LLM/MCP** | mcp-builder (Anthropic); mcp-server-builder (alirezarezvani); rag-architect, agent-designer, llm-cost-optimizer… | Keep **mcp-builder** (official, Apache-2.0 confirmed — better than the alirezarezvani `mcp-server-builder` duplicate) + **rag-architect** (RAG design + eval discipline) + **agent-designer** (multi-agent architecture patterns; script-dependent). Others → roadmap. |
 
 ## Phase 5 — Evaluation of selected skills
 
@@ -116,8 +116,11 @@ selected skill was below SOLID.
 - **alirezarezvani security suite** (~12 skills: red-team, threat-detection, senior-security…) — a
   whole security domain of its own; better sourced from a specialist repo (trailofbits, OWASP) in a
   later security-focused iteration than half-included now.
-- **slo-architect, migration-architect, feature-flags-architect, runbook-generator** — strong SOLID
-  skills that would extend production coverage; held back to keep v0.1 at ~25 and avoid overweighting
-  one source. Top candidates for the next expansion.
+- **migration-architect, runbook-generator** — SOLID but script-heavy/templated (migration overlaps
+  database-designer; runbook is a doc generator). Still deferred; reasonable later adds.
+- ~~**slo-architect, feature-flags-architect**~~ — **promoted into the pack** after a second read
+  (v0.1 update). slo-architect is DEEP SRE discipline (*"most SLOs are arbitrary numbers no one
+  believes"*); feature-flags-architect treats flags as a lifecycle, not an `if`. They close the
+  SRE/reliability and progressive-delivery lanes that were the thinnest gaps.
 - **anthropics/skills claude-api, webapp-testing** — claude-api is knowledge-reference (not behavior);
   webapp-testing is a Playwright tool. Neither fits the behavior-first thesis.

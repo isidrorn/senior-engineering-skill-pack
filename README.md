@@ -1,6 +1,6 @@
 # Senior Engineering Skill Pack
 
-A curated pack of **25 existing, high-quality [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills)**
+A curated pack of **29 existing, high-quality [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills)**
 that make Claude Code reason like a **senior / staff engineer** — design before code, analyze
 trade-offs, investigate root cause, weigh failure modes, and check production readiness — rather
 than adding framework trivia.
@@ -23,7 +23,7 @@ This repo is a Claude Code **plugin marketplace** containing one plugin, `senior
 /plugin install senior-engineering@senior-engineering-skill-pack
 ```
 
-Cost: **~1,947 tokens always-on** per session (the 25 skill descriptions); each skill's fuller
+Cost: **~2,502 tokens always-on** per session (the 29 skill descriptions); each skill's fuller
 instructions load only when it fires. Cheap enough to keep the whole pack enabled.
 
 > **Overlap with Anthropic's `engineering` plugin.** Seven skills here — `architecture`,
@@ -37,7 +37,7 @@ instructions load only when it fires. Cheap enough to keep the whole pack enable
 > **stdlib-only** Python helpers. They run fine; on Windows, set `PYTHONIOENCODING=utf-8` so their
 > Unicode output prints in the default console.
 
-## What's inside (25 skills)
+## What's inside (29 skills)
 
 **Behavior / workflow discipline (9)** — the core
 `systematic-debugging` · `zero-hallucination-coder` · `adversarial-reviewer` ·
@@ -50,14 +50,15 @@ instructions load only when it fires. Cheap enough to keep the whole pack enable
 **API / data (2)**
 `api-design-reviewer` · `database-designer`
 
-**Production / SRE (5)**
-`chaos-engineering` · `ship-gate` · `observability-designer` · `deploy-checklist` · `incident-response`
+**Production / SRE (7)**
+`chaos-engineering` · `ship-gate` · `observability-designer` · `slo-architect` ·
+`feature-flags-architect` · `deploy-checklist` · `incident-response`
 
-**Review / debt / testing (3)**
-`code-review` · `tech-debt` · `testing-strategy`
+**Review / debt / testing (4)**
+`code-review` · `named-persona-adversarial-review` · `tech-debt` · `testing-strategy`
 
-**AI / LLM engineering (2)**
-`mcp-builder` · `rag-architect`
+**AI / LLM engineering (3)**
+`mcp-builder` · `rag-architect` · `agent-designer`
 
 ## How it was built
 

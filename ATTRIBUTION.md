@@ -15,7 +15,7 @@ the Anthropic skills' optional `../../CONNECTORS.md` reference resolves).
 |---|---|---|---|
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | `d884ae04edebef577e82ff7c4e143debd0bbec99` | systematic-debugging, test-driven-development, verification-before-completion, writing-plans, brainstorming, requesting-code-review, receiving-code-review |
 | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Apache-2.0 | `1a69f0ca3c77f8108dfeecf7e38262889ed0215c` | architecture, system-design, deploy-checklist, incident-response, code-review, tech-debt, testing-strategy |
-| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | MIT | `aa8d778811a557a2c28ccadda4cf3d0bd028a4cc` | zero-hallucination-coder, adversarial-reviewer, tech-stack-evaluator, api-design-reviewer, database-designer, chaos-engineering, ship-gate, observability-designer, rag-architect |
+| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | MIT | `aa8d778811a557a2c28ccadda4cf3d0bd028a4cc` | zero-hallucination-coder, adversarial-reviewer, tech-stack-evaluator, api-design-reviewer, database-designer, chaos-engineering, ship-gate, observability-designer, rag-architect, slo-architect, feature-flags-architect, named-persona-adversarial-review, agent-designer |
 | [anthropics/skills](https://github.com/anthropics/skills) | Apache-2.0 (per-skill `LICENSE.txt`) | `fa0fa64bdc967915dc8399e803be67759e1e62b8` | mcp-builder |
 | [ericgandrade/claude-superskills](https://github.com/ericgandrade/claude-superskills) | MIT | `394587c7cb1fb249d02326c96d9735a0d5969b23` | senior-solution-architect |
 
@@ -48,6 +48,10 @@ the Anthropic skills' optional `../../CONNECTORS.md` reference resolves).
 | ship-gate | alirezarezvani/claude-skills | Rajaraman Arumugam | MIT |
 | observability-designer | alirezarezvani/claude-skills | claude-code-skills | MIT |
 | rag-architect | alirezarezvani/claude-skills | claude-code-skills | MIT |
+| slo-architect | alirezarezvani/claude-skills | claude-code-skills | MIT |
+| feature-flags-architect | alirezarezvani/claude-skills | claude-code-skills | MIT |
+| named-persona-adversarial-review | alirezarezvani/claude-skills | claude-code-skills | MIT |
+| agent-designer | alirezarezvani/claude-skills | claude-code-skills | MIT |
 
 > Note: `alirezarezvani/claude-skills` aggregates skills from multiple original authors; where a
 > skill's own frontmatter credits a specific author (e.g. `adversarial-reviewer` → ekreloff,

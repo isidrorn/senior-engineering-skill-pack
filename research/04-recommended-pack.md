@@ -1,6 +1,6 @@
 # Document 4 — Recommended Senior Engineering Pack (v0.1)
 
-**25 skills**, assembled into an installable plugin under [`../skills/`](../skills/). All are
+**29 skills**, assembled into an installable plugin under [`../skills/`](../skills/). All are
 vendored **as-is** (unchanged) from their upstream sources — per the research constraint that this
 phase evaluates and assembles existing work, deferring customization. Sources, licenses, and commit
 SHAs are in [`../ATTRIBUTION.md`](../ATTRIBUTION.md).
@@ -9,12 +9,17 @@ Selection philosophy: **behavior-first**. The pack is anchored on process-forcin
 (the user's stated priority) and filled out with domain skills for coverage — preferring
 prose-reasoning skills over script-tool-wrappers, and never letting a single source dominate.
 
-**Measured cost** (from `claude plugin details`): **~1,947 tokens always-on** per session (the 25
+**Measured cost** (from `claude plugin details`): **~2,502 tokens always-on** per session (the 29
 skill descriptions), plus on-invoke cost only when a skill actually fires. Small enough to run the
 whole pack enabled.
 
-**Source balance:** superpowers 7 · Anthropic engineering 7 · alirezarezvani 9 · anthropics/skills 1
-· ericgandrade 1. Vetted/hand-crafted sources (superpowers + Anthropic) = 15 of 25.
+**Source balance:** superpowers 7 · Anthropic engineering 7 · alirezarezvani 13 · anthropics/skills 1
+· ericgandrade 1. Vetted/hand-crafted sources (superpowers + Anthropic) = 15 of 29.
+
+> **v0.1 update:** four skills (`slo-architect`, `feature-flags-architect`,
+> `named-persona-adversarial-review`, `agent-designer`) were promoted from "deferred" after a
+> second read confirmed they close the SRE/reliability, progressive-delivery, and AI-eng thin lanes.
+> They are marked ⤴ in the tables below.
 
 ## The pack
 
@@ -48,27 +53,31 @@ column flags the intended next move from [Document 5](05-personalization-roadmap
 | api-design-reviewer | REST review: convention linting, breaking-change detection, design scorecards. | as-is (script-dependent) |
 | database-designer | Schema/index design, normalization, expand-contract zero-downtime migrations. | as-is |
 
-### Production / SRE (5)
+### Production / SRE (7)
 | Skill | Why selected / problem it solves | Future |
 |---|---|---|
 | chaos-engineering | "Failure Mode Analysis" done safely — steady-state, blast-radius, abort criteria. | as-is |
 | ship-gate | Pre-prod audit that intercepts deploy intent until critical issues pass. | as-is |
-| observability-designer | Metrics/logs/traces + SLI/SLO + alert-noise reduction. "Production Readiness." | as-is |
+| observability-designer | Metrics/logs/traces + alert-noise reduction. "Production Readiness." | as-is |
+| slo-architect ⤴ | SLO/SLI discipline: Google SRE-workbook, error budgets, multi-window burn-rate, burn policy. | as-is |
+| feature-flags-architect ⤴ | Flag lifecycle: rollout plans, kill switches, flag-debt, provider trade-offs. | as-is |
 | deploy-checklist | Release checklist: migrations, flags, CI status, rollback triggers. | as-is |
 | incident-response | Triage, severity, comms, blameless postmortem. | as-is |
 
-### Review / debt / testing (3)
+### Review / debt / testing (4)
 | Skill | Why selected / problem it solves | Future |
 |---|---|---|
 | code-review | Everyday security/perf/correctness review (N+1, injection, edge cases). | as-is |
+| named-persona-adversarial-review ⤴ | Review via sourced engineer philosophies (Torvalds/Thompson/Carmack/Beck); never invent the quote. | as-is |
 | tech-debt | Turns "we should refactor" into a categorized, prioritized backlog. | as-is |
 | testing-strategy | Coverage and test-architecture reasoning at plan level. | as-is |
 
-### AI / LLM engineering (2)
+### AI / LLM engineering (3)
 | Skill | Why selected / problem it solves | Future |
 |---|---|---|
 | mcp-builder | Build production MCP servers well — the integration surface for LLM tooling. | as-is |
 | rag-architect | RAG pipeline design tied to a mandatory retrieval-eval loop; staleness-aware. | as-is |
+| agent-designer ⤴ | Multi-agent architecture: supervisor/pipeline/swarm decision table, tool-schema gen. Script-dependent. | as-is |
 
 ## Coverage matrix
 
@@ -80,7 +89,7 @@ Behavior categories the user named × where they're covered:
 | Architecture Review | architecture, senior-solution-architect, code-review |
 | Trade-off Analysis | tech-stack-evaluator, architecture, system-design |
 | Failure Mode Analysis | chaos-engineering, incident-response |
-| Production Readiness | verification-before-completion, ship-gate, deploy-checklist, observability-designer |
+| Production Readiness | verification-before-completion, ship-gate, deploy-checklist, slo-architect, feature-flags-architect, observability-designer |
 | Root Cause Analysis | systematic-debugging |
 | Code Review (all sides) | code-review, adversarial-reviewer, requesting-/receiving-code-review |
 
@@ -91,11 +100,13 @@ Target domains × coverage:
 | Software Architecture / System Design | **strong** (architecture, system-design, senior-solution-architect) |
 | API Design | medium (api-design-reviewer, system-design) |
 | Production Engineering / SRE | **strong** (5 skills) |
-| Observability | medium (observability-designer) |
+| Reliability / SRE | **strong** (slo-architect, observability-designer) |
+| Progressive delivery / release | **strong** (feature-flags-architect, deploy-checklist, ship-gate) |
+| Observability | **strong** (observability-designer, slo-architect) |
 | Testing | **strong** (testing-strategy, TDD) |
 | Debugging / RCA | **strong** (systematic-debugging) |
-| Review / Quality | **strong** (4 review skills) |
-| AI Engineering / LLM / RAG | medium (mcp-builder, rag-architect) |
+| Review / Quality | **strong** (5 review skills) |
+| AI Engineering / LLM / RAG | medium (mcp-builder, rag-architect, agent-designer) |
 | Data modeling | medium (database-designer) |
 | Distributed Systems / Event-driven | light — partial via system-design; **gap → roadmap** |
 | Cloud-Native / Kubernetes / IaC | light — production-operational only; **gap → roadmap** |
