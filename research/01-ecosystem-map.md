@@ -5,6 +5,13 @@ Overview of the repositories surveyed while assembling the Senior Engineering Pa
 (**2026-07-20**), not from memory. Star counts drift daily; treat them as "order of magnitude at
 survey time."
 
+> **Round-2 addendum.** A later round added five Java/Spring + distributed sources not in the
+> original sweep — `rrezartprebreza/spring-boot-skills`, `piomin/claude-ai-spring-boot`,
+> `Jeffallan/claude-skills`, `sethdford/claude-skills` (all vendored from), plus
+> `spring-ai-community/spring-testing-skills` and `wyattowalsh/agents` (evaluated, not used). See
+> [`../ATTRIBUTION.md`](../ATTRIBUTION.md). Lesson: the round-1 Java "gap" was an artifact of not
+> searching *language-specifically* — the skills existed.
+
 ## Method & stopping point
 
 Discovery started from the user's initial list and expanded through six community "awesome-list"

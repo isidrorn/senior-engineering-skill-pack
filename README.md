@@ -1,6 +1,6 @@
 # Senior Engineering Skill Pack
 
-A curated pack of **29 existing, high-quality [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills)**
+A curated pack of **61 existing, high-quality [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills)**
 that make Claude Code reason like a **senior / staff engineer** — design before code, analyze
 trade-offs, investigate root cause, weigh failure modes, and check production readiness — rather
 than adding framework trivia.
@@ -23,8 +23,10 @@ This repo is a Claude Code **plugin marketplace** containing one plugin, `senior
 /plugin install senior-engineering@senior-engineering-skill-pack
 ```
 
-Cost: **~2,502 tokens always-on** per session (the 29 skill descriptions); each skill's fuller
-instructions load only when it fires. Cheap enough to keep the whole pack enabled.
+Cost: **~4,448 tokens always-on** per session (the 61 skill descriptions); each skill's fuller
+instructions load only when it fires. The pack is **Java/Spring-heavy by design** (the maintainer's
+primary stack) — if you work in another stack, you can disable the `Java / Spring` group to cut most
+of that always-on cost.
 
 > **Overlap with Anthropic's `engineering` plugin.** Seven skills here — `architecture`,
 > `code-review`, `system-design`, `tech-debt`, `testing-strategy`, `deploy-checklist`,
@@ -37,7 +39,20 @@ instructions load only when it fires. Cheap enough to keep the whole pack enable
 > **stdlib-only** Python helpers. They run fine; on Windows, set `PYTHONIOENCODING=utf-8` so their
 > Unicode output prints in the default console.
 
-## What's inside (29 skills)
+## What's inside (61 skills)
+
+**Java / Spring (22)** — the maintainer's primary stack
+`java-architect` · `jpa-patterns` · `design-patterns` · `hexagonal-architecture` ·
+`domain-driven-design` · `layered-architecture` · `transactional-patterns` · `spring-data-jpa` ·
+`spring-data-redis` · `spring-security-jwt` · `oauth2-resource-server` · `rest-api-conventions` ·
+`problem-details-rfc9457` · `openapi-first` · `hateoas` · `flyway-migrations` · `multi-module-maven` ·
+`spring-batch` · `testing-pyramid` · `ai-observability` · `spring-ai-integration` · `mcp-server`
+<br>(Spring skills are the **Spring Boot 4** variants of `rrezartprebreza/spring-boot-skills`.)
+
+**Distributed systems / event-driven (10)**
+`microservices-patterns` · `event-driven-architecture` · `cqrs-design` · `event-sourcing` ·
+`caching-strategy` · `data-partitioning` · `api-gateway-design` · `service-mesh-patterns` ·
+`system-decomposition` · `monolith-assessment`
 
 **Behavior / workflow discipline (9)** — the core
 `systematic-debugging` · `zero-hallucination-coder` · `adversarial-reviewer` ·

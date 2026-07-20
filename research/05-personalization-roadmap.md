@@ -40,21 +40,22 @@ personalized one, ordered by leverage.
 
 Ranked by how central they are to the target domains:
 
-1. **Distributed systems patterns** — no dedicated skill for consistency models, idempotency,
-   sagas, outbox, backpressure, retries/timeouts. High value for the stated backend/distributed
-   focus. Likely an original skill (see §4) or sourced from a system-design-patterns repo.
-2. **Event-driven architecture** — Kafka/streaming, event sourcing, CQRS as first-class reasoning,
-   not just a mention in an architecture table.
-3. **Cloud-native / Kubernetes / IaC reasoning** — v0.1 covers *operating* production but not
-   *designing* cloud infra. Evaluate `zxkane/aws-skills`, `hashicorp/agent-skills`, and
+1. ~~**Distributed systems patterns**~~ — **FILLED (round 2)** by `sethdford/claude-skills`:
+   microservices-patterns (saga/circuit-breaker/bulkhead/idempotency), caching-strategy,
+   data-partitioning, api-gateway-design, service-mesh-patterns, system-decomposition,
+   monolith-assessment. Nygard/Newman-grounded, anti-patterns with guards.
+2. ~~**Event-driven architecture**~~ — **FILLED (round 2):** event-driven-architecture, cqrs-design,
+   event-sourcing (sethdford, Hohpe/Young-grounded).
+3. **Cloud-native / Kubernetes / IaC reasoning** — still open. v0.1 covers *operating* production but
+   not *designing* cloud infra. Evaluate `zxkane/aws-skills`, `hashicorp/agent-skills`, and
    alirezarezvani's own aws/azure/gcp-cloud-architect + terraform-patterns (after de-tooling).
-4. **Security review** — a proper security lane. `trailofbits/skills` (CodeQL/Semgrep, high
-   credibility) and `agamm/claude-code-owasp` (OWASP/ASVS) are the strongest candidates; better than
-   half-including alirezarezvani's 12-skill security suite.
-5. **Java / Spring reasoning** — the user delisted framework *knowledge*, but Java-idiomatic
-   reasoning (concurrency pitfalls, JVM performance, Spring transaction/bean boundaries) is a
-   legitimate gap given the stated stack. Candidate for an original skill grounded in the user's own
-   `Claude-senior-java-engineer` curriculum (which has the material but ships no skills).
+4. **Security review** — still open. A proper security lane. `trailofbits/skills` (CodeQL/Semgrep,
+   high credibility) and `agamm/claude-code-owasp` (OWASP/ASVS) are the strongest candidates.
+5. ~~**Java / Spring reasoning**~~ — **FILLED (round 2)** with 22 skills incl. java-architect,
+   jpa-patterns (N+1/lazy/locking), transactional-patterns, hexagonal-architecture,
+   domain-driven-design, spring-security-jwt (Spring Boot 4). Remaining Java opportunity: JVM
+   concurrency/performance-specific reasoning (still could be an original grounded in the user's
+   `Claude-senior-java-engineer` curriculum).
 6. **Deeper SRE** — `slo-architect` and `feature-flags-architect` were **promoted into v0.1** (see
    Doc 4). `runbook-generator` (doc generator) and `migration-architect` (script-heavy, overlaps
    database-designer) remain reasonable later adds.
@@ -77,15 +78,14 @@ no, rewrite until yes.
 
 ## 4. Opportunities for original skills
 
-Where nothing existing is good enough and the user has a distinctive point of view:
+Where nothing existing is good enough and the user has a distinctive point of view. **Round 2
+superseded the two biggest original-skill ideas** (distributed-systems and Java/Spring reasoning now
+have good vendored skills), so what remains is narrower and more personal:
 
-- **`distributed-systems-review`** — a behavior skill that forces the failure-mode questions
-  (what happens on partial failure? is this idempotent? what's the consistency guarantee? where's
-  the backpressure?) before a distributed change ships. Nothing in the ecosystem does this as
-  discipline rather than knowledge.
-- **`java-spring-reasoning`** — distill the user's Java-21 curriculum into a reasoning skill (not a
-  cheatsheet): when to reach for which concurrency primitive, transaction boundary pitfalls, N+1 in
-  JPA, etc.
+- **`jvm-concurrency-performance`** — the one Java sub-area the vendored Spring skills *don't* cover:
+  when to reach for which concurrency primitive, virtual threads vs. thread pools, JMH/allocation
+  pitfalls, false sharing. Distill from the user's `Claude-senior-java-engineer` curriculum. (The
+  broader Java/Spring reasoning gap is now filled — see §3.)
 - **`design-before-code` meta-skill** — the user's list treats this as one behavior, but it's
   currently spread across brainstorming/writing-plans/zero-hallucination-coder. A thin orchestrator
   that routes to the right one by task stakes could be more usable than three separate triggers.
@@ -97,8 +97,9 @@ Where nothing existing is good enough and the user has a distinctive point of vi
 - **Pin upstream SHAs (done in ATTRIBUTION.md) and diff on update** so an upstream rewrite of a
   vendored skill is a conscious choice, not a silent drift.
 - **Run `claude plugin details` after each change** to watch always-on token cost as the pack grows
-  (v0.1 baseline: ~2,502 tokens for 29 skills). A senior pack that's too expensive to keep enabled
-  defeats itself.
+  (baselines: ~2,502 tokens for the 29-skill core; ~4,448 for the full 61 after round 2). A senior
+  pack that's too expensive to keep enabled defeats itself — the Java/Spring group is the biggest
+  chunk and can be disabled by non-Spring users.
 - **Complementary MCP servers, not skills.** The kubernetes/terraform/grafana MCP *servers* found
   during discovery pair well with the reasoning skills (e.g. observability-designer + mcp-grafana)
   but belong in a user's MCP config, not this pack.

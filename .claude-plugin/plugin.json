@@ -1,7 +1,7 @@
 {
   "name": "senior-engineering",
   "version": "0.1.0",
-  "description": "A curated pack of 29 existing, high-quality Agent Skills that make Claude Code reason like a senior/staff engineer — design before code, analyze trade-offs, investigate root cause, weigh failure modes, and check production readiness — rather than adding framework trivia. Skills are vendored unchanged from their upstream sources; see ATTRIBUTION.md.",
+  "description": "A curated, Java/Spring-heavy pack of 61 existing, high-quality Agent Skills that make Claude Code reason like a senior/staff engineer — design before code, analyze trade-offs, investigate root cause, weigh failure modes, and check production readiness — rather than adding framework trivia. Skills are vendored unchanged from their upstream sources; see ATTRIBUTION.md.",
   "author": {
     "name": "Senior Engineering Skill Pack (curated)"
   }

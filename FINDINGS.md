@@ -34,8 +34,15 @@ These are **tools/servers, not skills** — but they're the hands for several sk
 
 ## Open threads flagged during the project
 
-- **Java/Spring gap is a priority, not a nicety.** The strong backend skills found (e.g.
-  `senior-backend`) are language-mismatched (Node). Worth a targeted hunt for a Java/Spring-tailored
-  backend/architecture skill before writing one from scratch. → tracked in roadmap §4.
+- ✅ **Java/Spring gap — RESOLVED (round 2).** A targeted hunt found strong Java/Spring skills:
+  vendored 22 (Boot 4) from `rrezartprebreza/spring-boot-skills` + `piomin/claude-ai-spring-boot`
+  (Piotr Mińkowski) + `Jeffallan/claude-skills` (java-architect). Lesson: language-specific hunting
+  matters — the round-1 "gap" was an artifact of not searching for Java-tailored skills.
+- ✅ **Distributed systems / event-driven — RESOLVED (round 2)** via `sethdford/claude-skills` (10
+  skills). These repos are now *used*, not just flagged.
+- **Still open:** dedicated **Security** lane (trailofbits/OWASP) and **Cloud-native/K8s design** —
+  see roadmap §3.
 - **`alirezarezvani/claude-skills`** has ~40 more in-scope skills we didn't vendor (security suite,
   cloud suite, data-eng, agents). Catalogued in `research/02-skill-inventory.md`; mine as needed.
+- **`sethdford/claude-skills`** has ~245 more skills beyond the 10 taken (large architect/design/data
+  toolkit) — a rich seam for future architecture/data-modeling additions.

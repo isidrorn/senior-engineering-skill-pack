@@ -9,6 +9,11 @@ intake filter (behavior-changing engineering reasoning **or** a target domain). 
 [Document 1](01-ecosystem-map.md)) unless a skill ships its own — noted where so. `cluster` IDs feed
 the dedup analysis in [Document 3](03-skill-evaluation.md).
 
+> **Round-2 addendum.** This inventory reflects the round-1 sweep (the core 29). A later Java/Spring +
+> distributed round added 32 skills (pack → 61) from four new sources; those are catalogued in
+> [`../ATTRIBUTION.md`](../ATTRIBUTION.md), [`../COVERAGE.md`](../COVERAGE.md), and the README rather
+> than re-woven here.
+
 ## Relevant-skill counts per source
 
 | Source | Total skills | Relevant | Notes |

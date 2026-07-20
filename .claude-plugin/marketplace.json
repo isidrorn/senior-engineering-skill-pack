@@ -9,7 +9,7 @@
       "name": "senior-engineering",
       "displayName": "Senior Engineering Pack",
       "source": ".",
-      "description": "29 curated behavior-changing engineering-reasoning skills (architecture, system design, debugging discipline, code review, trade-off analysis, failure-mode analysis, production readiness, SRE/SLOs) spanning backend, distributed systems, cloud-native, API design, observability, testing, and AI/LLM engineering."
+      "description": "61 curated behavior-changing engineering-reasoning skills spanning Java/Spring (Boot 4), distributed systems & event-driven architecture, system design, debugging discipline, code review, trade-off analysis, failure-mode analysis, production readiness/SRE, observability, testing, and AI/LLM engineering."
     }
   ]
 }

@@ -1,6 +1,12 @@
 # Document 4 — Recommended Senior Engineering Pack (v0.1)
 
-**29 skills**, assembled into an installable plugin under [`../skills/`](../skills/). All are
+> **Round-2 update (now 61 skills).** After confirming the priority domains had good existing skills
+> we'd filtered out, a second round added **22 Java/Spring skills (Spring Boot 4)** + **10
+> distributed/EDA skills** — full grid in [`../COVERAGE.md`](../COVERAGE.md). The tables below
+> describe the original v0.1 core (29); the round-2 additions are catalogued in
+> [`../ATTRIBUTION.md`](../ATTRIBUTION.md) and [`../README.md`](../README.md).
+
+**29 core skills**, assembled into an installable plugin under [`../skills/`](../skills/). All are
 vendored **as-is** (unchanged) from their upstream sources — per the research constraint that this
 phase evaluates and assembles existing work, deferring customization. Sources, licenses, and commit
 SHAs are in [`../ATTRIBUTION.md`](../ATTRIBUTION.md).
@@ -9,12 +15,12 @@ Selection philosophy: **behavior-first**. The pack is anchored on process-forcin
 (the user's stated priority) and filled out with domain skills for coverage — preferring
 prose-reasoning skills over script-tool-wrappers, and never letting a single source dominate.
 
-**Measured cost** (from `claude plugin details`): **~2,502 tokens always-on** per session (the 29
-skill descriptions), plus on-invoke cost only when a skill actually fires. Small enough to run the
-whole pack enabled.
+**Measured cost** (v0.1 core): **~2,502 tokens always-on** for 29 skills; **~4,448** for the full 61
+after round 2. On-invoke cost is paid only when a skill fires.
 
-**Source balance:** superpowers 7 · Anthropic engineering 7 · alirezarezvani 13 · anthropics/skills 1
-· ericgandrade 1. Vetted/hand-crafted sources (superpowers + Anthropic) = 15 of 29.
+**Source balance (core 29):** superpowers 7 · Anthropic engineering 7 · alirezarezvani 13 ·
+anthropics/skills 1 · ericgandrade 1. Round-2 added: spring-boot-skills 19 · sethdford 10 · piomin 2
+· jeffallan 1.
 
 > **v0.1 update:** four skills (`slo-architect`, `feature-flags-architect`,
 > `named-persona-adversarial-review`, `agent-designer`) were promoted from "deferred" after a
