@@ -59,6 +59,22 @@ Ranked by how central they are to the target domains:
    Doc 4). `runbook-generator` (doc generator) and `migration-architect` (script-heavy, overlaps
    database-designer) remain reasonable later adds.
 
+## 3b. Essence-extraction from tooling-heavy skills (explicit rule for the customization round)
+
+A skill was **never dropped for being good** — only for being *coupled to bundled scripts* in a way
+that hurts portability. Their **reasoning is still valuable and must be mined, not discarded.** In
+the customization round, for each tooling-heavy deferred/dropped skill, extract the durable
+*discipline* (decision tables, checklists, failure-mode questions, workflow) into a prose-first
+SKILL.md and make the scripts optional accelerators. Explicit re-visit list (essence worth keeping):
+
+- **senior-backend** → API/auth/microservice design checklist + DB-optimization heuristics (drop the Node-specific scaffolder scripts)
+- **migration-architect** → phased-cutover + rollback-path + compatibility-gate reasoning
+- **api-design-reviewer / tech-stack-evaluator / observability-designer** (already *in*, but script-leaning) → lift the linting rules / scoring rubric / golden-signals model into prose so they work without running Python
+- **tdd-guide, senior-qa, runbook-generator, terraform-patterns, kubernetes-operator** → keep the patterns, shed the generators
+
+The test for each: *"if the scripts vanished, does the SKILL.md still make Claude reason better?"* If
+no, rewrite until yes.
+
 ## 4. Opportunities for original skills
 
 Where nothing existing is good enough and the user has a distinctive point of view:
