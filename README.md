@@ -90,11 +90,14 @@ roadmap):
 5. [`research/05-personalization-roadmap.md`](research/05-personalization-roadmap.md) — what to
    rewrite, merge, and add next
 
-## Known gaps (intentional for v0.1)
+## Status & known gaps
 
-Distributed-systems patterns, event-driven architecture, cloud-native/Kubernetes *design*, dedicated
-security review, and Java/Spring reasoning are **light or absent** — deliberate scope for an 80/20
-first cut. See the [roadmap](research/05-personalization-roadmap.md) for how they'll be filled.
+Current state, decisions, and how to resume: [`PROJECT-STATUS.md`](PROJECT-STATUS.md).
+Coverage at a glance: [`COVERAGE.md`](COVERAGE.md).
+
+Java/Spring, distributed systems, and event-driven architecture are now **covered** (round 2). Still
+**light or open**: a dedicated **security review** lane and **cloud-native/Kubernetes *design***. See
+the [roadmap](research/05-personalization-roadmap.md).
 
 ## Provenance
 
